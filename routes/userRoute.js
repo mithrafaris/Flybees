@@ -13,7 +13,7 @@ user_route.get('/contact',viewcontroll.contact )
  user_route.get('/product-detail',viewcontroll.product_detail )
 user_route.get('/product',viewcontroll.product )
 user_route.get('/shoping_cart',viewcontroll.shoping_cart)
-user_route.get('/user-login',viewcontroll.user_login );
+user_route.get('/user_login',viewcontroll.user_login );
 user_route.get('/otp',viewcontroll.otp)
 
 

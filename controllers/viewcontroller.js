@@ -29,7 +29,7 @@ exports.contact=(req, res) => {
     res.render('shoping_cart');
   };
   exports.user_login=(req, res) => {
-    res.render('user-login');
+    res.render('user_login');
   };
   exports.otp=(req,res)=>{
     res.render('otp')
@@ -38,3 +38,10 @@ exports.contact=(req, res) => {
   exports.user_details=(req,res)=>{
     res.render('user_details')
   }
+  exports.forms=(req,res)=>{
+    res.render('forms')
+  }
+  exports.calendar=(req,res)=>{
+    res.render('calendar')
+  }
+  calendar

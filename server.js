@@ -16,12 +16,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 
-app.use(express.static(path.resolve(__dirname, 'public/user')));
-app.use(express.static(path.resolve(__dirname, 'public/admin')));
-
-
-
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use('/', userRoute);
 app.use('/', adminRoute);
 // app.get("/userdetails", (req, res) => {
