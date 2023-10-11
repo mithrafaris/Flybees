@@ -19,12 +19,7 @@ app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', userRoute);
 app.use('/', adminRoute);
-// app.get("/userdetails", (req, res) => {
-//     res.render("userdetails");
-// });
 
-
-// Set views directories for admin and user
 app.set('views', [
     path.resolve(__dirname, 'views/admin'),
     path.resolve(__dirname, 'views/user'),

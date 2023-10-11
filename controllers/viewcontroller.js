@@ -41,7 +41,25 @@ exports.contact=(req, res) => {
   exports.forms=(req,res)=>{
     res.render('forms')
   }
-  exports.calendar=(req,res)=>{
-    res.render('calendar')
+
+  exports.index=(req,res)=>{
+    res.render("index")
   }
-  calendar
+  exports.login=(req,res)=>{
+    res.render("login")
+  }
+  exports.profile=(req,res)=>{
+    res.render("profile")
+  }
+  exports.register=(req,res)=>{
+    res.render("register")
+  }
+  exports.reset_password=(req,res)=>{
+    res.render("reset_password")
+  }
+  exports.tables=(req,res)=>{
+    res.render("tables")
+  }
+  exports.icons=(req,res)=>{
+    res.render("icons")
+  }
