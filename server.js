@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const connectDB=require('./database/connection')
 const bodyParser = require('body-parser');
 const path = require('path');
 const userRoute = require('./routes/userRoute')
@@ -15,7 +16,7 @@ const PORT = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
-
+connectDB()
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', userRoute);
 app.use('/', adminRoute);
