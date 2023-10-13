@@ -254,7 +254,18 @@ Bootstrap core CSS -->
 	}	
 	.modal form label {
 		font-weight: normal;
-	}	
+	}
+	
+	
+        #myButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+   
+   	
 </style>
 <script>
 $(document).ready(function(){
@@ -306,10 +317,11 @@ $(document).ready(function(){
 								<thead>
 									<tr>
 										<th>
-											<span class="custom-checkbox">
-												<input type="checkbox" id="selectAll">
-												<label for="selectAll"></label>
-											</span>
+											
+									<span class="custom-checkbox">
+									<input type="checkbox" id="selectAll">
+									<label for="selectAll"></label>
+									</span>
 										</th>
 										<th>Name <i class="fa fa-sort"></i></th>
 										<th>Email <i class="fa fa-sort"></i></th>
@@ -317,7 +329,6 @@ $(document).ready(function(){
 										<th>Phone <i class="fa fa-sort"></i></th>
 										<th>OTP <i class="fa fa-sort"></i></th>
 										<th>OTP Expiration <i class="fa fa-sort"></i></th>
-										<th>Guest User ID <i class="fa fa-sort"></i></th>
 										<th>Status <i class="fa fa-sort"></i></th>
 										
 										
@@ -326,23 +337,20 @@ $(document).ready(function(){
 								<tbody>
 									<tr>
 										<td>
-											<span class="custom-checkbox">
-												<input type="checkbox" id="user1">
-												<label for="user1"></label>
-											</span>
-										</td>
+											
+											
+									 
+
+											</td>
 										<td>John Doe</td>
 										<td>johndoe@example.com</td>
 										<!-- <td>Male</td> -->
 										<td>(123) 456-7890</td>
 										<td>123456</td>
 										<td>2023-10-09 12:00 PM</td>
-										<td>Guest123</td>
-										<td>
-											<span class="Statuscheckbox">
-												<input type="checkbox" id="true">
-												<label for="true"></label>
-											</span</td>
+										
+										
+									
 											
 											
 										
@@ -476,6 +484,21 @@ $(document).ready(function(){
             });
         });
     });
+</script>
+<script>
+	var isTrue = false;
+
+function changeColor() {
+    var button = document.getElementById('myButton');
+    isTrue = !isTrue; // Toggle the boolean value
+
+    if (isTrue) {
+        button.style.backgroundColor = 'blue';
+    } else {
+        button.style.backgroundColor = 'green';
+    }
+}
+
 </script>
 
 </html>

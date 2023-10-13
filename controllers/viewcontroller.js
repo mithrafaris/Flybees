@@ -10,12 +10,12 @@ exports.home_02=(req,res)=>{
   exports.home_03=(req,res)=>{
     res.render('home-03')
   }
-//   exports.blog_detail=(req, res) => {
-//     res.render('blog_detail');
-//   };
-//   exports.blog=(req, res) => {
-//     res.render('blog');
-//   };
+  exports.blog_detail=(req, res) => {
+    res.render('blog_detail');
+  };
+  exports.blog=(req, res) => {
+    res.render('blog');
+  };
 exports.contact=(req, res) => {
     res.render('contact');
   };
