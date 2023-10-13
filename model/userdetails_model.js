@@ -12,7 +12,7 @@ var userSchema = new mongoose.schema({
   },
   avatar: {
     type: String,
-    default: "src/images/avatar.png",
+    default: "",
   },
 
   email: {
