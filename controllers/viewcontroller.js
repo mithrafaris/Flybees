@@ -1,65 +1,57 @@
-exports.homeRoutes=(req,res)=>{
-    res.render('home');
-}
-exports.about=(req,res)=>{
-    res.render('about');
-}
-exports.home_02=(req,res)=>{
-    res.render('home_02')
-  }
-  exports.home_03=(req,res)=>{
-    res.render('home-03')
-  }
-  // exports.blog_detail=(req, res) => {
-  //   res.render('blog_detail');
-  // };
-  // exports.blog=(req, res) => {
-  //   res.render('blog');
-  // };
-exports.contact=(req, res) => {
-    res.render('contact');
-  };
-  exports.product_detail=(req, res) => {
-    res.render('product_detail');
-  };
-  exports.product=(req, res) => {
-    res.render('product');
-  };
-  exports.shoping_cart=(req, res) => {
-    res.render('shoping_cart');
-  };
-  exports.user_login=(req, res) => {
-    res.render('user_login');
-  };
-  exports.otp=(req,res)=>{
-    res.render('otp')
-  }
-  //ADMIN
-  exports.user_details=(req,res)=>{
-    res.render('user_details')
-  }
-  exports.forms=(req,res)=>{
-    res.render('forms')
-  }
+const userDB = require("../model/userdetails_model")
 
-  exports.dashboard=(req,res)=>{
-    res.render("dashboard")
+exports.homeRoutes = async (req, res) => {
+  res.render("home", { title: "Flybees" });
+};
+exports.about = (req, res) => {
+  res.render("about", { title: "Flybees" });
+};
+exports.contact = (req, res) => {
+  res.render("contact", { title: "Flybees" });
+};
+exports.otpmessage = (req, res) => {
+  res.render("otpmessage", { title: "Flybees" });
+};
+
+exports.product_details = (req, res) => {
+  res.render("product_details", { title: "Flybees" });
+};
+exports.product = (req, res) => {
+  res.render("product", { title: "Flybees" });
+};
+exports.shoping_cart = (req, res) => {
+  res.render("shoping_cart", { title: "Flybees" });
+};
+exports.user_login = (req, res) => {
+  res.render("user_login", { title: "Flybees" });
+};
+exports.otp = (req, res) => {
+  res.render("otp");
+};
+
+exports.user_signup = (req, res) => {
+  res.render("user_signup", { title: "Flybees" });
+};
+
+
+
+//ADMIN
+exports.user_details = async(req, res) => {
+  try {
+    const result=await userDB.find({})
+    console.log(result);
+    res.render("user_details", { title: "Flybees" ,user:result});
+  } catch (error) {
+    res.send(error.message)
   }
-  exports.login=(req,res)=>{
-    res.render("login")
-  }
-  exports.profile=(req,res)=>{
-    res.render("profile")
-  }
-  exports.register=(req,res)=>{
-    res.render("register")
-  }
-  exports.reset_password=(req,res)=>{
-    res.render("reset_password")
-  }
-  exports.tables=(req,res)=>{
-    res.render("tables")
-  }
-  exports.icons=(req,res)=>{
-    res.render("icons")
-  }
+};
+
+exports.productsDetails = (req, res) => {
+  res.render("productsDetails", { title: "Flybees" });
+};
+exports.dashboard = (req, res) => {
+  res.render("dashboard", { title: "Flybees" });
+};
+exports.Adminlogin = (req, res) => {
+  res.render("Adminlogin", { title: "Flybees" })}
+ 
