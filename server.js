@@ -1,6 +1,9 @@
 const express = require('express');
+const app = express();
 const dotenv = require('dotenv');
-const morgan = require('morgan');
+// const morgan = require('morgan');
+const cookieParser=require("cookie-parser");
+const session=require("express-session");
 
 const connectDB =require("./database/connection")
 const bodyParser = require('body-parser');
@@ -11,16 +14,27 @@ const adminRoute = require('./routes/adminRoute');
 
 
 dotenv.config({ path: path.join(__dirname, 'config.env') });
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false, maxAge: 3600000 }
+}));
+
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store');
+  next();
+});
 
 
-const app = express();
+
 const PORT = process.env.PORT || 8080;
 
 
 // Middleware
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 
 

@@ -11,7 +11,8 @@
     "mongoose": "^7.6.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "update": "^0.4.2"
   },
   "scripts": {
     "start": "nodemon server.js"
@@ -21,5 +22,8 @@
   "description": "myE-commerce website",
   "main": "server.js",
   "author": "mithra k.m",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.0.3"
+  }
 }

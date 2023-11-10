@@ -14,6 +14,7 @@ const Schema = new mongoose.Schema({
   isBlock: {
     type: Boolean,
     default: false,
+   
   },
   isadmin: {
     type: Boolean,

@@ -22,6 +22,7 @@ exports.product = (req, res) => {
 exports.shoping_cart = (req, res) => {
   res.render("shoping_cart", { title: "Flybees" });
 };
+
 exports.user_login = (req, res) => {
   res.render("user_login", { title: "Flybees" });
 };
@@ -49,9 +50,18 @@ exports.user_details = async(req, res) => {
 exports.productsDetails = (req, res) => {
   res.render("productsDetails", { title: "Flybees" });
 };
+
+
 exports.dashboard = (req, res) => {
+  
   res.render("dashboard", { title: "Flybees" });
 };
 exports.Adminlogin = (req, res) => {
   res.render("Adminlogin", { title: "Flybees" })}
+exports.categoryManagement=(req,res)=>{
+    res.render("categoryManagement",{title:"Flybees"})
+  }
+  exports.addCategory = (req,res) => {
+    res.render("addCategory", { title: "Flybees" });
+  }
  

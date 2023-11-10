@@ -3,14 +3,12 @@ const bcrypt = require("bcrypt");
 
 exports.Admin_login = async (req, res) => {
   try {
-  
     const { name, password } = req.body;
 
     const user = await userDB.findOne({ email: name, isadmin: true });
 
     console.log(user);
     if (!user) {
-      // User not found
       return res.status(401).send("User not found");
     }
 
@@ -19,13 +17,9 @@ exports.Admin_login = async (req, res) => {
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (passwordMatch) {
-     
-      req.session.adminUsername = user.name;
-      req.session.isAdminLoggedIn = true;
-
+      // Redirect to the admin dashboard upon successful login
       return res.redirect("/admin/dashboard");
     } else {
-     
       return res.status(401).send("Invalid email or password");
     }
   } catch (error) {
@@ -33,3 +27,4 @@ exports.Admin_login = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+                          

@@ -3330,3 +3330,13 @@ input.num-product::-webkit-inner-spin-button {
   }
 
 }
+
+    #loginContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Adjust as needed */
+    }
+
+    #loginButton {
+        margin-left: 10px; /* Adjust as needed */
+    }
